@@ -19,7 +19,18 @@ body {
 	justify-content: center;
 }
 
+.detail {
+	font-weight: bold;
+	font-size: 1.25rem;
+}
+
+.forecast {
+	  border-top: 1px solid rgba(255, 255, 255, 0.2);
+	  padding-top:4rem;
+}
+
 .forecast-days {
+	padding-top: 1.25rem;
 	display: flex;
 	gap: 25px;
 }
@@ -39,8 +50,8 @@ body {
 }
 
 .weather-details {
-	display: flex;
-	justify-content: start;
-	gap: 25px;
+	margin-bottom: 2rem;
+	
 }
+
 
