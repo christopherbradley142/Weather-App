@@ -1,0 +1,5 @@
+Frontend Notes 04/07/2025
+Weather App
+
+Openweather Map 
+Get used to use API again.

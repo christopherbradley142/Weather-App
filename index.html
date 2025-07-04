@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+	<script src="./react.js"></script>
+	<script src="./react-dom.js"></script>
+	<script src="./data.jsx"></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<title>Weather App</title>
+</head>
+<body>
+	<div id="root"></div>
+</body>
+<script type="text/babel">
+function Main(){
+	function Header(){
+		return(
+			<h1>Weather App</h1>
+		)
+	}
+	
+	return(
+	<div className="wrapper">
+	<Header />
+	</div>
+	)
+}
+	ReactDOM.render(
+	<Main />,
+	document.getElementById("root"))
+</script>
+</html>
