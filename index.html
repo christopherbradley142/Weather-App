@@ -38,7 +38,7 @@ function App(){
 			return response.json();
 		})
 		.then(data => {
-			console.log('Weather data', data);
+			console.log('Weather Temp', data.current_weather.temperature);
 			
 		})
 		.catch(error => {

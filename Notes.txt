@@ -10,7 +10,7 @@ FaFa Pix
 Either preset for linz, or input for lat long etc...
 
 new york lat a. long:
-40.7128° N, 74.0060° W
+40.7128° N, 74.0060° 
 
 const lat = 52.52; // Example latitude
 const lon = 13.405; // Example longitude
