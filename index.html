@@ -10,7 +10,6 @@
 		<script src="./react-dom.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/axios@1.10.0/dist/axios.min.js"></script>
 		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-	
 		<title>swapi - React - Anbindung</title>
   </head>
   <body>
@@ -18,8 +17,9 @@
 		<div id="root">
     </div>
 	<script type="text/babel">
+		// REACT
 		function App(){
-
+			// STATE
 			const { useState, useEffect } = React;
 			const [dataUse, setDataUse] = useState(null);
 			const [temp, setTemp] = useState(null);
@@ -27,14 +27,16 @@
 			const [cond, setCond] = useState(null);
 			const [det, setDet] = useState(null);
 			const [spd, setSpd] = useState(null);
-			
+			const [dir, setDir] = useState(null);
+			const [hum, setHum] = useState(null);
+			const [dayNight, setDayNight]
 			const APIurl = "https://swapi.info/api/people/1"
 			const APIurlTwo = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&current=apparent_temperature,wind_speed_10m&hourly=";
-
+			// USE-EFFECT HOOK W. API-CALL A. RESPONSE
 			useEffect(()=>{
+				// AXIOS-GET
 				axios.get(APIurlTwo)
 					.then(response => {
-						
 						let temperature = response.data.current.apparent_temperature
 						//let log = response.data;
 						let windSpeed = response.data.current.wind_speed_10m
@@ -43,23 +45,33 @@
 						setSpd(windSpeed);
 					})
 			})
+			// RETURN-STATEMENT
 			return (
 <div className="wrapper">
       <div className="header">
-        <h1 className="location">Linz</h1>
+        <h1 className="location">{loc}</h1>
         <p className="temperature">{temp}</p>
-        <p className="condition">Cloudy</p>
+        <p className="condition">{cond}</p>
       </div>
       <div className="weather-details">
         <div>
-          <p>Humidity</p>
-          <p className="detail"> 60%</p>
+          <p>Humidity:</p>
+          <p className="detail">{hum}</p>
         </div>
         <div>
-          <p>Wind Speed: {spd}</p>
-          <p className="detail">7 mph</p>
+          <p>Wind Speed:</p>
+          <p className="detail">{spd}</p>
+        </div>
+        <div>
+          <p>Wind Direction:</p>
+          <p className="detail">{dir}</p>
+        </div>
+        <div>
+          <p>Daytime:</p>
+          <p className="detail">{dayNight}</p>
         </div>
       </div>
+	
       <div className="forecast">
         <h2 className="headForecast">5-Day Forecast</h2>
         <div className="forecast-days">
@@ -103,6 +115,7 @@
     </div>
 			)
 		}
+		// RENDERING-PART
 		const root= ReactDOM.createRoot(document.getElementById('root'));
 		root.render(<App />)
 	</script>
