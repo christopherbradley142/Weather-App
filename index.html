@@ -5,12 +5,14 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400&display=swap" rel="stylesheet">
+	<!-- Load Material Icons stylesheet -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="styles.css">
 		<script src="./react.js"></script>
 		<script src="./react-dom.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/axios@1.10.0/dist/axios.min.js"></script>
 		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-		<title>swapi - React - Anbindung</title>
+		<title>Weather App</title>
   </head>
   <body>
     <div>
@@ -64,7 +66,6 @@
 						let responses = response.data.current;
 						console.log(responses);
 						setTemp(responses.apparent_temperature);
-						
 					})
 			})
 			// RETURN-STATEMENT
@@ -74,13 +75,18 @@
 		<h4 className="location-Header">Standort</h4>
 		<h2 className="city">Linz</h2>
 		<p className="temperature">{temp}°</p>
-		<p className="feltTemp">{feltTemp}</p>
         <p className="condition">{cond}</p>
+<span class="material-icons">
+dark_mode
+</span>
       </div>
-      <div className="weather-details">
+		<div className="weather-details">
         <div>
           <p>Humidity:</p>
           <p className="detail">{hum}</p>
+<span class="material-icons">
+wb_sunny</span>
+			
         </div>
         <div>
           <p>Wind Speed:</p>
