@@ -43,6 +43,7 @@
 		
 		// vars
 		Long lat in url inject not response, pre useEffect?
+		Perfect to add average-high, average-low
 		*/ 
 		function App(){ 
 			// IMPORT
@@ -59,19 +60,21 @@
 			const [time, setTime] = useState(null);
 			const [dayNight, setDayNight] = useState(null);
 			// URL-VARS
-			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,wind_speed_10m,wind_direction_10m,precipitation,rain,showers,snowfall,cloud_cover&timezone=Europe%2FBerlin&forecast_days=1";
+			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&daily=weather_code,apparent_temperature_max,apparent_temperature_min,sunshine_duration,daylight_duration&hourly=temperature_2m&current=apparent_temperature,wind_speed_10m,wind_direction_10m&timezone=Europe%2FBerlin&forecast_days=1";
+			const APIurlTwo = 
 			// USE-EFFECT HOOK W. API-CALL A. RESPONSE
 			useEffect(()=>{
 				// AXIOS-GET
 				axios.get(APIurl)
 					.then(response => {
 						let responses = response.data.current;
-						console.log(responses);
+						let responsesTwo = response.data;
+						console.log(responsesTwo);
 						setTemp(responses.apparent_temperature);
-						setHum(responses.relative_humidity_2m);
+						
 						setSpd(responses.wind_speed_10m);
-						setDir(responses.wind_direction_10m);
-						setDayNight(responses.is_day);
+						// do daytime
+						
 						// TimeStuff
 					})
 			})
@@ -85,23 +88,15 @@
         <p className="condition">{cond}</p>
       </div>
 		<div className="weather-details">
-        <div>
-          <p>Humidity:</p>
-          <p className="detail">{hum}</p>
-			
-        </div>
+        
         <div>
           <p>Wind Speed:</p>
           <p className="detail">{spd}</p>
         </div>
-        <div>
-          <p>Wind Direction:</p>
-          <p className="detail">{dir}</p>
-        </div>
-        <div>
-          <p>Daytime:</p>
-          <p className="detail">{dayNight}</p>
-        </div>
+        <div className="averages">
+				
+		</div>
+        
       </div>
 	
       <div className="forecast">
