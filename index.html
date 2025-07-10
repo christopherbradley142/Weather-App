@@ -5,8 +5,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400&display=swap" rel="stylesheet">
-	<!-- Load Material Icons stylesheet -->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://cdn.jsdelivr.net/npm/material-icons@1.13.14/iconfont/material-icons.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="styles.css">
 		<script src="./react.js"></script>
 		<script src="./react-dom.js"></script>
@@ -18,7 +17,6 @@
     <div>
 		<div id="root">
     </div>
-	
 	<script type="text/babel">
 		// REACT
 		/* 
@@ -39,6 +37,12 @@
 		nice-to have sunrise sunset
 		
 		ultimate nico to have pixel moon etc. replace fafa with my own!...
+		1. vars
+		2. state
+		3. html
+		
+		// vars
+		Long lat in url inject not response, pre useEffect?
 		*/ 
 		function App(){ 
 			// IMPORT
@@ -46,7 +50,6 @@
 			// STATES INVISIBLE
 			const [long, setLong] = useState(null);
 			const [lat, setLat] = useState(null);
-			
 			// STATES VISIBLE
 			const [temp, setTemp] = useState(null);
 			const [cond, setCond] = useState(null);
@@ -55,17 +58,19 @@
 			const [hum, setHum] = useState(null);
 			const [dayNight, setDayNight] = useState(null);
 			// URL-VARS
-			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,wind_speed_10m,wind_direction_10m,precipitation,rain,showers,snowfall,cloud_cover&timezone=Europe%2FBerlin&forecast_days=1";
+			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,wind_speed_10m,wind_direction_10m,precipitation,rain,showers,snowfall,cloud_cover&timezone=Europe%2FBerlin&forecast_days=1";
 			// USE-EFFECT HOOK W. API-CALL A. RESPONSE
 			useEffect(()=>{
 				// AXIOS-GET
 				axios.get(APIurl)
 					.then(response => {
-						setLong(48.3069);
-						setLat(14.2859);
 						let responses = response.data.current;
 						console.log(responses);
 						setTemp(responses.apparent_temperature);
+						setHum(responses.relative_humidity_2m);
+						setSpd(responses.wind_speed_10m);
+						setDir(responses.wind_direction_10m);
+						setDayNight(responses.is_day);
 					})
 			})
 			// RETURN-STATEMENT
@@ -76,16 +81,11 @@
 		<h2 className="city">Linz</h2>
 		<p className="temperature">{temp}°</p>
         <p className="condition">{cond}</p>
-<span class="material-icons">
-dark_mode
-</span>
       </div>
 		<div className="weather-details">
         <div>
           <p>Humidity:</p>
           <p className="detail">{hum}</p>
-<span class="material-icons">
-wb_sunny</span>
 			
         </div>
         <div>
