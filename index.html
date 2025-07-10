@@ -29,14 +29,18 @@
 			const [spd, setSpd] = useState(null);
 			
 			const APIurl = "https://swapi.info/api/people/1"
-			const APIurlTwo = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&current=apparent_temperature";
+			const APIurlTwo = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&current=apparent_temperature,wind_speed_10m&hourly=";
 
 			useEffect(()=>{
 				axios.get(APIurlTwo)
 					.then(response => {
-						let temperature = response.data.current.apparent_temperature
-						setTemp(temperature);
 						
+						let temperature = response.data.current.apparent_temperature
+						//let log = response.data;
+						let windSpeed = response.data.current.wind_speed_10m
+						//console.log(log)
+						setTemp(temperature);	
+						setSpd(windSpeed);
 					})
 			})
 			return (
@@ -52,7 +56,7 @@
           <p className="detail"> 60%</p>
         </div>
         <div>
-          <p>Wind Speed</p>
+          <p>Wind Speed: {spd}</p>
           <p className="detail">7 mph</p>
         </div>
       </div>
