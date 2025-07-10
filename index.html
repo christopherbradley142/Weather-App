@@ -16,20 +16,28 @@
     <div>
 		<div id="root">
     </div>
+	
 	<script type="text/babel">
 		// REACT
-		function App(){
-			// STATE
+		/* 
+		Todo 
+		structure states
+		first states and then html part
+		icon fontify etc.. fafa for rain sun snow windy evtl at end --> nice to have!
+		*/ 
+		function App(){ 
+			// IMPORT
 			const { useState, useEffect } = React;
-			const [dataUse, setDataUse] = useState(null);
+			// STATES 
 			const [temp, setTemp] = useState(null);
+			const [feltTemp, setFeltTemp] = useState(null);
 			const [loc, setLoc] = useState(null);
 			const [cond, setCond] = useState(null);
-			const [det, setDet] = useState(null);
 			const [spd, setSpd] = useState(null);
 			const [dir, setDir] = useState(null);
 			const [hum, setHum] = useState(null);
-			const [dayNight, setDayNight]
+			const [dayNight, setDayNight] = useState(null);
+			// URL-VARS
 			const APIurl = "https://swapi.info/api/people/1"
 			const APIurlTwo = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&current=apparent_temperature,wind_speed_10m&hourly=";
 			// USE-EFFECT HOOK W. API-CALL A. RESPONSE
@@ -51,6 +59,7 @@
       <div className="header">
         <h1 className="location">{loc}</h1>
         <p className="temperature">{temp}</p>
+		<p className="feltTemp">{feltTemp}</p>
         <p className="condition">{cond}</p>
       </div>
       <div className="weather-details">
