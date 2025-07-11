@@ -50,6 +50,8 @@
 		How many conditions?
 		5? 
 		Rain, Snow, Sun, Clouds, Storm
+		
+		Make form input field -> for location states
 		*/ 
 		function App(){ 
 			// IMPORT
@@ -64,6 +66,8 @@
 			const [max, setMax] = useState(null);
 			const [wkDay, setWkDay] = useState(null);
 			const [cond, setCond] = useState(null);
+			const [sun, setSun] = useState(null);
+			const [light, setLight] = useState(null);
 		// URL-VARS
 			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&daily=weather_code,apparent_temperature_max,apparent_temperature_min,sunshine_duration,daylight_duration&current=apparent_temperature,snowfall,cloud_cover,rain,showers,wind_speed_10m,wind_direction_10m&timezone=Europe%2FBerlin&forecast_days=1";
 			// time stuff
@@ -81,8 +85,9 @@
 							else if(days = 5){days = "Fr"}
 							else if(days = 6){days = "Sa"}
 							else {days = "So"
-			}*/
+			}*/		
 			let dayInDig = days;
+			// Function to extract day_Digit to string
 			const currday = (dayInDig) => {
 			    if(dayInDig === 1){
 			      return "Mo";
@@ -117,15 +122,25 @@
 					.then(response => {
 						let responses = response.data.current;
 						let responsesTwo = response.data;
-						console.log(responsesTwo);
+						let lightDur = ((responsesTwo.daily.daylight_duration /60) / 60);
+						let sunDur = ((responsesTwo.daily.sunshine_duration / 60) / 60);
+						
 						setTemp(responses.apparent_temperature);
 						setSpd(responses.wind_speed_10m);
 						setWkDay(weekDay);
 						//setTime(responsesTwo.daily.apperent_temperature_min)
 						setMax(responsesTwo.daily.apparent_temperature_max);
 						setMin(responsesTwo.daily.apparent_temperature_min);
+						console.log(lightDur);
+						//console.log(sunDur);
+						setLight(lightDur);
+						setSun(sunDur);
 						// do daytime
 						// TimeStuff
+						// Conditions
+						// Pre-Defined_Conditions
+						const lgsv = response.data;
+						console.log(lgsv);
 					})
 			}, [])
 			// RETURN-STATEMENT
@@ -150,6 +165,10 @@
 				<p>Min: {min}°</p>
 				<p>Max: {max}°</p>
 		</div> 
+		<div className="lightSun">
+				<p>Tageslicht-Dauer: {light}</p>
+				<p>Sonnenstrahlen-Dauer: {sun}</p>
+		</div>
       </div>
       <div className="forecast">
         <h2 className="headForecast">5-Day Forecast</h2>
