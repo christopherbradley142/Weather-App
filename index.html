@@ -46,6 +46,10 @@
 		Perfect to add average-high, average-low
 		Next->
 		Charat for time
+		
+		How many conditions?
+		5? 
+		Rain, Snow, Sun, Clouds, Storm
 		*/ 
 		function App(){ 
 			// IMPORT
@@ -59,8 +63,9 @@
 			const [min, setMin] = useState(null);
 			const [max, setMax] = useState(null);
 			const [wkDay, setWkDay] = useState(null);
+			const [cond, setCond] = useState(null);
 		// URL-VARS
-			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&daily=weather_code,apparent_temperature_max,apparent_temperature_min,sunshine_duration,daylight_duration&hourly=temperature_2m&current=apparent_temperature,wind_speed_10m,wind_direction_10m&timezone=Europe%2FBerlin&forecast_days=1";
+			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&daily=weather_code,apparent_temperature_max,apparent_temperature_min,sunshine_duration,daylight_duration&current=apparent_temperature,snowfall,cloud_cover,rain,showers,wind_speed_10m,wind_direction_10m&timezone=Europe%2FBerlin&forecast_days=1";
 			// time stuff
 			let timer = new Date();
 			let hours = timer.getHours();
@@ -100,10 +105,8 @@
 			    else{
 			      return "So";
 			    }
-			  }
-			
+			  }		
 			let weekDay = currday(dayInDig);
-			
 			let conHours = hours.toString();
 			let conMinutes = minutes.toString();
 			let currentTime = " " + conHours + ":" +  conMinutes + " Uhr";
