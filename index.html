@@ -21,36 +21,10 @@
 		// REACT
 		/* 
 		Todo 
-		
-		structure states
-		first states and then html part
-		icon fontify etc.. fafa for rain sun snow windy evtl at end --> nice to have!
-		Another niceto have --> precipitation --> hourly weather vaar
-		next structure state w axios
-		in css upper case for font for location-header
-		another nice to have -> change city
-		condition -> cond --< what is?
-		
-		
-		LOOK AT WHAT VARS ARE AVAILABLE -> STRUCTURE STATE -> STRUCTURE HTML
-		forecast for now 1day -> nice to -have -> more days!
-		nice-to have sunrise sunset
-		
+		another nice to have -> change city				
 		ultimate nico to have pixel moon etc. replace fafa with my own!...
-		1. vars
-		2. state
-		3. html
-		
-		// vars
-		Long lat in url inject not response, pre useEffect?
-		Perfect to add average-high, average-low
-		Next->
-		Charat for time
-		
-		How many conditions?
-		5? 
+		How many conditions? 
 		Rain, Snow, Sun, Clouds, Storm
-		
 		Make form input field -> for location states
 		*/ 
 		function App(){ 
@@ -68,24 +42,13 @@
 			const [cond, setCond] = useState(null);
 			const [sun, setSun] = useState(null);
 			const [light, setLight] = useState(null);
-		// URL-VARS
+			// URL-VARS
 			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&daily=weather_code,apparent_temperature_max,apparent_temperature_min,sunshine_duration,daylight_duration&current=apparent_temperature,snowfall,cloud_cover,rain,showers,wind_speed_10m,wind_direction_10m&timezone=Europe%2FBerlin&forecast_days=1";
-			// time stuff
+			// Time Stuff
 			let timer = new Date();
 			let hours = timer.getHours();
 			let minutes = timer.getMinutes();
 			let days = timer.getDay();
-			//console.log("The Day-Nr is:", days)
-			/*
-			function daysTime(){
-							if(days = 1){return days = "Mon"}
-							else (days = 5){return days = "Di"}
-							else if(days = 3){days = "Mi"}
-							else if(days = 4){days = "Do"}
-							else if(days = 5){days = "Fr"}
-							else if(days = 6){days = "Sa"}
-							else {days = "So"
-			}*/		
 			let dayInDig = days;
 			// Function to extract day_Digit to string
 			const currday = (dayInDig) => {
@@ -124,23 +87,13 @@
 						let responsesTwo = response.data;
 						let lightDur = ((responsesTwo.daily.daylight_duration /60) / 60);
 						let sunDur = ((responsesTwo.daily.sunshine_duration / 60) / 60);
-						
 						setTemp(responses.apparent_temperature);
 						setSpd(responses.wind_speed_10m);
 						setWkDay(weekDay);
-						//setTime(responsesTwo.daily.apperent_temperature_min)
 						setMax(responsesTwo.daily.apparent_temperature_max);
 						setMin(responsesTwo.daily.apparent_temperature_min);
-						console.log(lightDur);
-						//console.log(sunDur);
 						setLight(lightDur);
 						setSun(sunDur);
-						// do daytime
-						// TimeStuff
-						// Conditions
-						// Pre-Defined_Conditions
-						const lgsv = response.data;
-						console.log(lgsv);
 					})
 			}, [])
 			// RETURN-STATEMENT
@@ -148,15 +101,12 @@
 <div className="wrapper">
       <div className="header">
 				<p className="time">{wkDay}, {currentTime}</p>
-				
 		<h4 className="location-Header">Standort</h4>
 		<h2 className="city">Linz</h2>
 		<p className="temperature">{temp}°</p>
-		
         <p className="condition"></p>
       </div>
 		<div className="weather-details">
-        
         <div>
           <p>Wind Speed:</p>
           <p className="detail">{spd} km/h</p>
