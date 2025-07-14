@@ -37,14 +37,19 @@
 			// VISIBLE
 			const [temp, setTemp] = useState(null);
 			const [spd, setSpd] = useState(null);
+      const [cld, setCld] = useState(null);
 			const [min, setMin] = useState(null);
 			const [max, setMax] = useState(null);
 			const [wkDay, setWkDay] = useState(null);
 			const [sun, setSun] = useState(null);
 			const [light, setLight] = useState(null);
-			const [condition, setCondition] = useState();
+			const [condition, setCondition] = useState(null);
+      const [snow, setSnow] = useState(null);
+      const [rn, setRn] = useState(null);
+      const [shwr, setShwr] = useState(null);
 			// URL
-			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&daily=weather_code,apparent_temperature_max,apparent_temperature_min,sunshine_duration,daylight_duration&current=apparent_temperature,snowfall,cloud_cover,rain,showers,wind_speed_10m,wind_direction_10m&timezone=Europe%2FBerlin&forecast_days=1";
+			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&daily=weather_code,apparent_temperature_max,apparent_temperature_min,sunshine_duration,daylight_duration&current=apparent_temperature,snowfall,cloud_cover,precipitation,rain,showers,wind_speed_10m,wind_direction_10m&timezone=Europe%2FBerlin&forecast_days=1";
+
 			// TIME
 			let timer = new Date();
 			let hours = timer.getHours();
@@ -83,16 +88,21 @@
 			useEffect(()=>{
 				axios.get(APIurl)
 					.then(response => {
-						// DATA
+            // DATA
 						let responses = response.data.current;
 						let responsesTwo = response.data;
-						// VARS
+            console.log(responses);
+            // VARS
 						let lightDur = ((responsesTwo.daily.daylight_duration /60) / 60);
 						let sunDur = ((responsesTwo.daily.sunshine_duration / 60) / 60);
 						let lightStr = lightDur.toString()
 						let lightSlice = lightStr.slice(0, 2);
 						let sunStr = sunDur.toString();
 						let sunSlice = sunStr.slice(0, 2);
+            let cloudCover = responses.cloud_cover;
+            let rainShower = responses.shower;
+            let rain = responses.rain;
+            let snow = responses.snowfall;
 						// TEMP
 						setTemp(responses.apparent_temperature);
 						setSpd(responses.wind_speed_10m);
@@ -101,14 +111,39 @@
 						setMin(responsesTwo.daily.apparent_temperature_min);
 						setLight(lightSlice);
 						setSun(sunSlice);
+            setCld(cloudCover);
+            setRn(rain);
+            setShwr(rainShower);
+            setSnow(snow);
 					})
 			}, [])
       // Condition Setting
-      useEffect(()=>{
-        if(temp > 3){
-          setCondition("Sunny")
+      /*
+      Sunny = little cloud, little precipitation
+      -> Put clouds, and precipitation into api-call
+      Windy = High wind speeds
+      Rainy = Rain High or Showers High
+      Snow = Snow High
+      Storm = Storm High
+      */
+      useEffect(() => {
+        if(temp > 15 && cld < 40){
+          setCondition("Clear Sky")
         }
-      })
+        else if(cld > 40){
+          setCondition("Cloudy")
+        }
+        else if(rn > 0){
+          setCondition("Rain")
+        }
+        else if (shwr > 1 && rn > 0){
+          setCondition("Shower")
+        }
+        else if (snow > 0) {
+          setCondition("Snow")
+        }
+        }
+      )
 return (
 <div className="wrapper">
       <div className="header">
