@@ -1,17 +1,43 @@
-Frontend Notes 04/07/2025
-Weather App
-
-Openweather Map 
-Get used to use API again.
-API Call
-
-FaFa Pix
-
-Either preset for linz, or input for lat long etc...
-
-new york lat a. long:
-40.7128° N, 74.0060° 
-
-const lat = 52.52; // Example latitude
-const lon = 13.405; // Example longitude
-const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather`;
+		GENERAL
+		After the condition-part, I have to make a forecast. 2 Days ahead. but no matter... make 3
+		I think the normal way is to use a weather object, update those properties into the object --> oop
+		!Remember -> 'Updating objects in state'. data in state is rom -> treat state as read-only -> no mutations!
+		Avoid mutations.
+		The thing is -> values are immutable. But objects are not immutable. -> mutation.
+		Instead of mutating an object, one should replace it!
+		! -> spread-syntax is part of the answer here!
+		Mutation = changing or modifying data or state, after it has been created.
+		Instead of mutating objects directly -> create copies, w. the spread-syntax!
+		Spread-Syntax is something like obj...?! -> Why? -> Create new object, with the properties, of the old one.
+		-> Leave the old one, as is, and have a copy, of ht new one, with the old properties, and the new one added or changed.
+		-> Better formulation: 
+		Copy the object and change or add values!
+		--> how is it written? 
+		
+		NICE TO HAVE
+		1. Another nice to have -> change city				
+		2. Ultimate nico to have pixel moon etc. replace fafa with my own!...
+		3. Make form input field -> for location states
+		4. Weather object, that sits at top, reading properties out of weather obj.
+		
+		CONDITIONS
+		Conditions: Rain, Snow, Sun, Clouds, Storm.
+		If rain + storm = storm, if hagel = storm, if sun + rain = rain, if snow + storm = snow.
+		How to make conditions? -> 
+		Every condition is an if else execution-part ->
+		What values to use? -> Sun- 
+		Use object for description of condition?
+		let x = 
+		Sun
+		if(){}
+		Clouds
+		if(){}
+		Rain
+		if(){}
+		Snow
+		if(){}
+		Storm 
+		if(){}
+		How to go about writing conditions. It should be that in the end, the current condition -> lives in a state -> 
+		
+!!!!!!!!!(JA2-OSTdownload)

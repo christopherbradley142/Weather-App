@@ -18,39 +18,40 @@
 		<div id="root">
     </div>
 	<script type="text/babel">
-		// REACT
-		/* 
-		Todo 
-		another nice to have -> change city				
-		ultimate nico to have pixel moon etc. replace fafa with my own!...
-		How many conditions? 
-		Rain, Snow, Sun, Clouds, Storm
-		Make form input field -> for location states
-		*/ 
+		/*
+		Condition-Sun -> Condition Function - that does only one thing. where to write? inside the fetch-request?
+		Condition -> Conditional-Statement -> 
+		
+		"Very often when you write code, you want to perform different actions for different decisions."
+		
+		Read about conditions in react -> conditional-statements -> conditional-rendering - way to go!
+		
+		*/
+		// MAIN
 		function App(){ 
 			// IMPORT
 			const { useState, useEffect } = React;
-			// STATES INVISIBLE
+			// INVISIBLE
 			const [long, setLong] = useState(null);
 			const [lat, setLat] = useState(null);
-			// STATES VISIBLE
+			// VISIBLE
 			const [temp, setTemp] = useState(null);
 			const [spd, setSpd] = useState(null);
 			const [min, setMin] = useState(null);
 			const [max, setMax] = useState(null);
 			const [wkDay, setWkDay] = useState(null);
-			const [cond, setCond] = useState(null);
 			const [sun, setSun] = useState(null);
 			const [light, setLight] = useState(null);
-			// URL-VARS
+			const [cond, setCond] = useState({x:2});
+			// URL
 			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&daily=weather_code,apparent_temperature_max,apparent_temperature_min,sunshine_duration,daylight_duration&current=apparent_temperature,snowfall,cloud_cover,rain,showers,wind_speed_10m,wind_direction_10m&timezone=Europe%2FBerlin&forecast_days=1";
-			// Time Stuff
+			// TIME
 			let timer = new Date();
 			let hours = timer.getHours();
 			let minutes = timer.getMinutes();
 			let days = timer.getDay();
 			let dayInDig = days;
-			// Function to extract day_Digit to string
+			// WEEKDAY
 			const currday = (dayInDig) => {
 			    if(dayInDig === 1){
 			      return "Mo";
@@ -78,25 +79,33 @@
 			let conHours = hours.toString();
 			let conMinutes = minutes.toString();
 			let currentTime = " " + conHours + ":" +  conMinutes + " Uhr";
-			// USE-EFFECT HOOK W. API-CALL A. RESPONSE
+			// API
 			useEffect(()=>{
-				// AXIOS-GET
 				axios.get(APIurl)
 					.then(response => {
+						// DATA
 						let responses = response.data.current;
 						let responsesTwo = response.data;
+						// VARS
 						let lightDur = ((responsesTwo.daily.daylight_duration /60) / 60);
 						let sunDur = ((responsesTwo.daily.sunshine_duration / 60) / 60);
+						let lightStr = lightDur.toString()
+						let lightSlice = lightStr.slice(0, 2);
+						let sunStr = sunDur.toString();
+						let sunSlice = sunStr.slice(0, 2);
+						// TEMP 
 						setTemp(responses.apparent_temperature);
 						setSpd(responses.wind_speed_10m);
 						setWkDay(weekDay);
 						setMax(responsesTwo.daily.apparent_temperature_max);
 						setMin(responsesTwo.daily.apparent_temperature_min);
-						setLight(lightDur);
-						setSun(sunDur);
+						setLight(lightSlice);
+						setSun(sunSlice);
+						// CONDITIONS-WEATHER
+						console.log(cond);
+						setCond
 					})
 			}, [])
-			// RETURN-STATEMENT
 			return (
 <div className="wrapper">
       <div className="header">
@@ -104,7 +113,11 @@
 		<h4 className="location-Header">Standort</h4>
 		<h2 className="city">Linz</h2>
 		<p className="temperature">{temp}°</p>
-        <p className="condition"></p>
+		<div className="condis">
+				<h3>Condition: Sun</h3>
+		</div>
+      
+ 
       </div>
 		<div className="weather-details">
         <div>
@@ -116,10 +129,10 @@
 				<p>Max: {max}°</p>
 		</div> 
 		<div className="lightSun">
-				<p>Tageslicht-Dauer: {light}</p>
-				<p>Sonnenstrahlen-Dauer: {sun}</p>
+				<p>Sonnenstrahlen-Dauer (Stunden): {sun}</p>
+				<p>Tageslicht-Dauer (Stunden): {light}</p>
 		</div>
-      </div>
+		</div>
       <div className="forecast">
         <h2 className="headForecast">5-Day Forecast</h2>
         <div className="forecast-days">
@@ -163,7 +176,7 @@
     </div>
 			)
 		}
-		// RENDERING-PART
+		// RENDERING
 		const root= ReactDOM.createRoot(document.getElementById('root'));
 		root.render(<App />)
 	</script>
