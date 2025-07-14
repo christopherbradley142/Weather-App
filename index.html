@@ -20,15 +20,15 @@
 	<script type="text/babel">
 		/*
 		Condition-Sun -> Condition Function - that does only one thing. where to write? inside the fetch-request?
-		Condition -> Conditional-Statement -> 
-		
+		Condition -> Conditional-Statement ->
+
 		"Very often when you write code, you want to perform different actions for different decisions."
-		
+
 		Read about conditions in react -> conditional-statements -> conditional-rendering - way to go!
-		
+
 		*/
 		// MAIN
-		function App(){ 
+		function App(){
 			// IMPORT
 			const { useState, useEffect } = React;
 			// INVISIBLE
@@ -42,7 +42,7 @@
 			const [wkDay, setWkDay] = useState(null);
 			const [sun, setSun] = useState(null);
 			const [light, setLight] = useState(null);
-			const [cond, setCond] = useState({x:2});
+			const [condition, setCondition] = useState();
 			// URL
 			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&daily=weather_code,apparent_temperature_max,apparent_temperature_min,sunshine_duration,daylight_duration&current=apparent_temperature,snowfall,cloud_cover,rain,showers,wind_speed_10m,wind_direction_10m&timezone=Europe%2FBerlin&forecast_days=1";
 			// TIME
@@ -74,7 +74,7 @@
 			    else{
 			      return "So";
 			    }
-			  }		
+			  }
 			let weekDay = currday(dayInDig);
 			let conHours = hours.toString();
 			let conMinutes = minutes.toString();
@@ -93,7 +93,7 @@
 						let lightSlice = lightStr.slice(0, 2);
 						let sunStr = sunDur.toString();
 						let sunSlice = sunStr.slice(0, 2);
-						// TEMP 
+						// TEMP
 						setTemp(responses.apparent_temperature);
 						setSpd(responses.wind_speed_10m);
 						setWkDay(weekDay);
@@ -101,12 +101,15 @@
 						setMin(responsesTwo.daily.apparent_temperature_min);
 						setLight(lightSlice);
 						setSun(sunSlice);
-						// CONDITIONS-WEATHER
-						console.log(cond);
-						setCond
 					})
 			}, [])
-			return (
+      // Condition Setting
+      useEffect(()=>{
+        if(temp > 3){
+          setCondition("Sunny")
+        }
+      })
+return (
 <div className="wrapper">
       <div className="header">
 				<p className="time">{wkDay}, {currentTime}</p>
@@ -114,11 +117,9 @@
 		<h2 className="city">Linz</h2>
 		<p className="temperature">{temp}°</p>
 		<div className="condis">
-				<h3>Condition: Sun</h3>
+				<h3>{condition}</h3>
 		</div>
-      
- 
-      </div>
+</div>
 		<div className="weather-details">
         <div>
           <p>Wind Speed:</p>
@@ -127,7 +128,7 @@
         <div className="averages">
 				<p>Min: {min}°</p>
 				<p>Max: {max}°</p>
-		</div> 
+		</div>
 		<div className="lightSun">
 				<p>Sonnenstrahlen-Dauer (Stunden): {sun}</p>
 				<p>Tageslicht-Dauer (Stunden): {light}</p>
