@@ -1,11 +1,15 @@
 // 15/07/2025
 
 // Frontend
+Max Min problem -> slice 02
+Next days variable state blah
 Forecast is next, bc. conditions is done!
 How to do the forecast -> degree average a. if rain or snow rain snow, as text
+Forecast 3 Days
+But how to forecast -> average temperature for 3 days ahead. -> lk f. av.-temp
 
 // Def
-Googlen Stockholm prokropril!
+Googlen Stockholm prikropril!
 
 // Music
 Self Osc-Article
