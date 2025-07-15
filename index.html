@@ -56,7 +56,7 @@
       const [forecastTempThreeMax, setForecastTempThreeMax] = useState(null);
 
 			// URL
-			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&daily=weather_code,apparent_temperature_max,apparent_temperature_min,sunshine_duration,daylight_duration&current=apparent_temperature,snowfall,cloud_cover,precipitation,rain,showers,wind_speed_10m,wind_direction_10m&timezone=Europe%2FBerlin&forecast_days=3";
+			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&daily=weather_code,apparent_temperature_max,apparent_temperature_min,sunshine_duration,daylight_duration&current=apparent_temperature,snowfall,cloud_cover,precipitation,rain,showers,wind_speed_10m,wind_direction_10m&timezone=Europe%2FBerlin&forecast_days=4";
 
 			// TIME
 			let timer = new Date();
@@ -133,6 +133,7 @@
             setRn(rain);
             setShwr(rainShower);
             setSnow(snow);
+            // Forecasting
             setDayOne(wkDayPlOne);
             setDayTwo(wkDayPlTwo);
             setDayThree(wkDayPlThree);
@@ -144,10 +145,8 @@
             let maxThree = responsesTwo.daily.apparent_temperature_min[3];
             setForecastTempOneMin(minOne);
             setForecastTempOneMax(maxOne);
-
             setForecastTempTwoMin(minTwo);
             setForecastTempTwoMax(maxTwo);
-
             setForecastTempThreeMin(minThree);
             setForecastTempThreeMin(maxThree);
         	})
@@ -210,18 +209,18 @@ return (
         <div className="forecast-days">
           <div className="forecast-day">
             <p className="dayName">{dayOne}</p>
-            <p>Max: </p>
-            <p>Min: </p>
+            <p>Min: {forecastTempOneMin}</p>
+            <p>Max: {forecastTempOneMax}</p>
           </div>
           <div className="forecast-day">
             <p className="dayName">{dayTwo}</p>
-            <p>Max: </p>
-            <p>Min: </p>
+            <p>Min: {forecastTempTwoMin}</p>
+            <p>Max: {forecastTempTwoMax}</p>
           </div>
           <div className="forecast-day">
             <p className="dayName">{dayThree}</p>
-            <p>Max: </p>
-            <p>Min: </p>
+            <p>Min: {forecastTempThreeMin}</p>
+            <p>Max: {forecastTempThreeMax}</p>
           </div>
         </div>
       </div>
