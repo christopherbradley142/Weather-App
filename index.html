@@ -49,13 +49,14 @@
       const [shwr, setShwr] = useState(null);
 			// URL
 			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&daily=weather_code,apparent_temperature_max,apparent_temperature_min,sunshine_duration,daylight_duration&current=apparent_temperature,snowfall,cloud_cover,precipitation,rain,showers,wind_speed_10m,wind_direction_10m&timezone=Europe%2FBerlin&forecast_days=1";
-
+      
 			// TIME
 			let timer = new Date();
 			let hours = timer.getHours();
 			let minutes = timer.getMinutes();
 			let days = timer.getDay();
 			let dayInDig = days;
+
 			// WEEKDAY
 			const currday = (dayInDig) => {
 			    if(dayInDig === 1){

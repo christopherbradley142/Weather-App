@@ -1,4 +1,19 @@
-		GENERAL
+// 15/07/2025
+
+// Frontend
+Forecast is next, bc. conditions is done!
+How to do the forecast -> degree average a. if rain or snow rain snow, as text
+
+// Def
+Googlen Stockholm prokropril!
+
+// Music
+Self Osc-Article
+
+
+		
+
+GENERAL
 		After the condition-part, I have to make a forecast. 2 Days ahead. but no matter... make 3
 		I think the normal way is to use a weather object, update those properties into the object --> oop
 		!Remember -> 'Updating objects in state'. data in state is rom -> treat state as read-only -> no mutations!
