@@ -41,10 +41,20 @@ body {
 	  padding-top:4rem;
 }
 
+.forecast-day {
+		text-transform: capitalize;
+}
+
+.dayName {
+	text-transform: capitalize;
+}
+
 .headForecast {
 	text-transform: uppercase;
 	display: none;
 }
+
+
 
 .forecast-days {
 	padding-top: 1.25rem;

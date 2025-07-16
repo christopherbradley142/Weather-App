@@ -1,15 +1,14 @@
 // 16/07/2025
 
 // GENERAL
-
 Geretschläger lässt mich auf meine Hunde, fast draufsteigen. Ich bekomme daher einen Wutanfall.
 Ich bin mir nicht sicher, wie gut ich DAS aushalte. Sie treibt, mich systematisch i. d. Wahnsinn.
 Geretschläger, lässt mich zumindest manchmal kommen. wichtig. Sonst drehe ich wirklich durch...
-Sie ist schon etwas wert, aber nicht viel. 
+Sie ist schon etwas wert, aber nicht viel.
 Ich hasse sie. Für ihre scheisse. Man kann sie behandeln, wie Müll.
 Ob ich das aushalte.
-Ob die, mich wirklich mag? -> SO viel Aggression, gegen mich?! -> 
-Ich hasse Sie. Ob ich sie wirklich mag. Werde ich Erst nach der Hypnose feststellen. 
+Ob die, mich wirklich mag? -> SO viel Aggression, gegen mich?! ->
+Ich hasse Sie. Ob ich sie wirklich mag. Werde ich Erst nach der Hypnose feststellen.
 Bzw. ob ich überhaupt ein Leben mit ihr habe...
 Gottseidank Ableton -> gute Ausbeute. Weidmanns Heil - Goodwill huntin!
 
@@ -25,8 +24,8 @@ Styling start:
 - Grad symbole
 - Acessability very important!
 - Elemente u. Gruppen arrangieren
-- 
-- Colors, gradient, which colours, look at weather apps. I guess blue. Copy colours. 
+-
+- Colors, gradient, which colours, look at weather apps. I guess blue. Copy colours.
 - Sonnenstrahlen Dauer if one stelle - only Displays. one stelle...
 
 
@@ -35,19 +34,19 @@ Styling start:
 
 
 
-- Mobile styling is for somewhen. Look at app on desktop-screen and decide. Do in the evening or tomorrow, at desktop screen at house. 
+- Mobile styling is for somewhen. Look at app on desktop-screen and decide. Do in the evening or tomorrow, at desktop screen at house.
 - Control if german
 
 - i don't know what it needs for acessability...
 - What is next app?
 - E-commerce? Is it too early for it? Blog? Blog should be an easy one, because I have already built it...
-- 
+-
 
 // GENERAL
 !!! -> Praxmarer
 look at atom enhancers...
-Delete pic https://www.szene1.at/user/hUstentropfen/album/2634327 
-- Risiko schätzen, ob ich mich beschwere. 
+Delete pic https://www.szene1.at/user/hUstentropfen/album/2634327
+- Risiko schätzen, ob ich mich beschwere.
 - Find USB from keyboard!
 - clean room
 - ams
@@ -55,14 +54,14 @@ Delete pic https://www.szene1.at/user/hUstentropfen/album/2634327
 - Download Dune audiobooks and others
 - Training today a. tomorrow swim after hager at parked then go up via bus!
 - When is psychotherapy next date?! - 31.07.2025 12:00 Uhr
-- Write important dates on whiteboard. 
+- Write important dates on whiteboard.
 - Watch makhachev vids via torrent
-- Turn up torrent when going to train. 
-- Tomorrow leave to hager late or early? -> 1500-1800 -> 
+- Turn up torrent when going to train.
+- Tomorrow leave to hager late or early? -> 1500-1800 ->
 - Or swim today?
 
 // PRODUCTION
-PB great. obv. 
+PB great. obv.
 
 // 15/07/2025
 
@@ -82,7 +81,7 @@ Googlen Stockholm prikropril!
 Self Osc-Article
 
 
-		
+
 
 GENERAL
 		After the condition-part, I have to make a forecast. 2 Days ahead. but no matter... make 3
@@ -96,24 +95,24 @@ GENERAL
 		Instead of mutating objects directly -> create copies, w. the spread-syntax!
 		Spread-Syntax is something like obj...?! -> Why? -> Create new object, with the properties, of the old one.
 		-> Leave the old one, as is, and have a copy, of ht new one, with the old properties, and the new one added or changed.
-		-> Better formulation: 
+		-> Better formulation:
 		Copy the object and change or add values!
-		--> how is it written? 
-		
+		--> how is it written?
+
 		NICE TO HAVE
-		1. Another nice to have -> change city				
+		1. Another nice to have -> change city
 		2. Ultimate nico to have pixel moon etc. replace fafa with my own!...
 		3. Make form input field -> for location states
 		4. Weather object, that sits at top, reading properties out of weather obj.
-		
+
 		CONDITIONS
 		Conditions: Rain, Snow, Sun, Clouds, Storm.
 		If rain + storm = storm, if hagel = storm, if sun + rain = rain, if snow + storm = snow.
-		How to make conditions? -> 
+		How to make conditions? ->
 		Every condition is an if else execution-part ->
-		What values to use? -> Sun- 
+		What values to use? -> Sun-
 		Use object for description of condition?
-		let x = 
+		let x =
 		Sun
 		if(){}
 		Clouds
@@ -122,8 +121,8 @@ GENERAL
 		if(){}
 		Snow
 		if(){}
-		Storm 
+		Storm
 		if(){}
-		How to go about writing conditions. It should be that in the end, the current condition -> lives in a state -> 
-		
+		How to go about writing conditions. It should be that in the end, the current condition -> lives in a state ->
+
 !!!!!!!!!(JA2-OSTdownload)
