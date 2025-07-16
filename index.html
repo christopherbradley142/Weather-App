@@ -151,22 +151,11 @@
         	})
 			}, [])
 
-      // Condition Setting
-      /*
-      Sunny = little cloud, little precipitation
-      -> Put clouds, and precipitation into api-call
-      Windy = High wind speeds
-      Rainy = Rain High or Showers-High
-      Snow = Snow High
-      Storm = Storm High
-      */
-
       // CONDITIONS
       useEffect(() => {
         if(temp > 15 && cld < 40){
           setCondition("Blauer Himmer");
           setIcon("bi--sun-fill")
-
         }
         else if(cld > 40){
           setCondition("Bewölkt");
@@ -236,7 +225,6 @@ return (
     </div>
 			)
 		}
-
 		// RENDERING
 		const root= ReactDOM.createRoot(document.getElementById('root'));
 		root.render(<App />)
