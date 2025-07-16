@@ -45,13 +45,10 @@
       const [dayOne, setDayOne] = useState(null);
       const [dayTwo, setDayTwo] = useState(null);
       const [dayThree, setDayThree] = useState(null);
-
       const [forecastTempOneMin, setForecastTempOneMin] = useState(null);
       const [forecastTempOneMax, setForecastTempOneMax] = useState(null);
-
       const [forecastTempTwoMin, setForecastTempTwoMin] = useState(null);
       const [forecastTempTwoMax, setForecastTempTwoMax] = useState(null);
-
       const [forecastTempThreeMin, setForecastTempThreeMin] = useState(null);
       const [forecastTempThreeMax, setForecastTempThreeMax] = useState(null);
 
@@ -90,6 +87,7 @@
 			    }
 			  }
 
+        // TIME
 			let weekDay = currday(dayInDig);
 			let conHours = hours.toString();
 			let conMinutes = minutes.toString();
@@ -103,12 +101,11 @@
 				axios.get(APIurl)
 					.then(response => {
 
-            // DATA
+            // RESP
 						let responses = response.data.current;
 						let responsesTwo = response.data;
-            console.log(responsesTwo);
-            
-            // VARS
+
+            // VAR
 						let lightDur = ((responsesTwo.daily.daylight_duration[0] /60) / 60);
 						let sunDur = ((responsesTwo.daily.sunshine_duration[0] / 60) / 60);
 						let lightStr = lightDur.toString()
@@ -120,7 +117,7 @@
             let rain = responses.rain;
             let snow = responses.snowfall;
 
-						// TEMP
+						// TEMP-SET
 						setTemp(responses.apparent_temperature);
 						setSpd(responses.wind_speed_10m);
 						setWkDay(weekDay);
@@ -135,7 +132,7 @@
             setShwr(rainShower);
             setSnow(snow);
 
-            // Forecasting
+            // FORECAST
             setDayOne(wkDayPlOne);
             setDayTwo(wkDayPlTwo);
             setDayThree(wkDayPlThree);
@@ -163,6 +160,8 @@
       Snow = Snow High
       Storm = Storm High
       */
+
+      // CONDITIONS
       useEffect(() => {
         if(temp > 15 && cld < 40){
           setCondition("Blauer Himmel")
@@ -181,12 +180,14 @@
         }
         }
       )
+
+      // RETURN
 return (
 <div className="wrapper">
       <div className="header">
 				<p className="time">{wkDay}, {currentTime}</p>
-		<h4 className="location-Header">Standort</h4>
-		<h2 className="city">Linz</h2>
+		<h4 className="location-Header">standort:</h4>
+		<h2 className="city">linz</h2>
 		<p className="temperature">{temp}°</p>
 		<div className="condis">
 				<h3>{condition}</h3>
@@ -207,28 +208,29 @@ return (
 		</div>
 		</div>
       <div className="forecast">
-        <h2 className="headForecast">3-Tages-Voraussage</h2>
+        <h2 className="headForecast">3-Tages</h2>
         <div className="forecast-days">
           <div className="forecast-day">
             <p className="dayName">{dayOne}</p>
-            <p>Min: {forecastTempOneMin}</p>
-            <p>Max: {forecastTempOneMax}</p>
+            <p>Min: {forecastTempOneMin}°</p>
+            <p>Max: {forecastTempOneMax}°</p>
           </div>
           <div className="forecast-day">
             <p className="dayName">{dayTwo}</p>
-            <p>Min: {forecastTempTwoMin}</p>
-            <p>Max: {forecastTempTwoMax}</p>
+            <p>Min: {forecastTempTwoMin}°</p>
+            <p>Max: {forecastTempTwoMax}°</p>
           </div>
           <div className="forecast-day">
             <p className="dayName">{dayThree}</p>
-            <p>Min: {forecastTempThreeMin}</p>
-            <p>Max: {forecastTempThreeMax}</p>
+            <p>Min: {forecastTempThreeMin}°</p>
+            <p>Max: {forecastTempThreeMax}°</p>
           </div>
         </div>
       </div>
     </div>
 			)
 		}
+
 		// RENDERING
 		const root= ReactDOM.createRoot(document.getElementById('root'));
 		root.render(<App />)

@@ -19,8 +19,16 @@ body {
 	justify-content: center;
 }
 
+.time {
+	text-transform: capitalize;
+}
+
 .location-Header {
 	text-transform: uppercase;
+}
+
+.city {
+	text-transform: capitalize;
 }
 
 .detail {
@@ -31,6 +39,11 @@ body {
 .forecast {
 	  border-top: 1px solid rgba(255, 255, 255, 0.2);
 	  padding-top:4rem;
+}
+
+.headForecast {
+	text-transform: uppercase;
+	display: none;
 }
 
 .forecast-days {
@@ -55,7 +68,5 @@ body {
 
 .weather-details {
 	margin-bottom: 2rem;
-	
+
 }
-
-
