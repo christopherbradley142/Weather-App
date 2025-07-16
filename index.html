@@ -89,6 +89,7 @@
 			      return "So";
 			    }
 			  }
+
 			let weekDay = currday(dayInDig);
 			let conHours = hours.toString();
 			let conMinutes = minutes.toString();
@@ -96,7 +97,6 @@
       let wkDayPlOne = currday(dayInDig + 1);
       let wkDayPlTwo = currday(dayInDig + 2);
       let wkDayPlThree = currday(dayInDig + 3);
-
 
 			// API
 			useEffect(()=>{
@@ -107,6 +107,7 @@
 						let responses = response.data.current;
 						let responsesTwo = response.data;
             console.log(responsesTwo);
+            
             // VARS
 						let lightDur = ((responsesTwo.daily.daylight_duration[0] /60) / 60);
 						let sunDur = ((responsesTwo.daily.sunshine_duration[0] / 60) / 60);
@@ -133,6 +134,7 @@
             setRn(rain);
             setShwr(rainShower);
             setSnow(snow);
+
             // Forecasting
             setDayOne(wkDayPlOne);
             setDayTwo(wkDayPlTwo);
@@ -163,19 +165,19 @@
       */
       useEffect(() => {
         if(temp > 15 && cld < 40){
-          setCondition("Clear Sky")
+          setCondition("Blauer Himmel")
         }
         else if(cld > 40){
-          setCondition("Cloudy")
+          setCondition("Bewölkt")
         }
         else if(rn > 0){
-          setCondition("Rain")
+          setCondition("Regen")
         }
         else if (shwr > 1 && rn > 0){
-          setCondition("Shower")
+          setCondition("Starker Regen")
         }
         else if (snow > 0) {
-          setCondition("Snow")
+          setCondition("Schnee")
         }
         }
       )
@@ -205,7 +207,7 @@ return (
 		</div>
 		</div>
       <div className="forecast">
-        <h2 className="headForecast">3-Day Forecast</h2>
+        <h2 className="headForecast">3-Tages-Voraussage</h2>
         <div className="forecast-days">
           <div className="forecast-day">
             <p className="dayName">{dayOne}</p>
