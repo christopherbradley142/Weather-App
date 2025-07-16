@@ -17,8 +17,11 @@ body {
 	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 	align-content: center;
 	justify-content: center;
-}
 
+}
+.condis {
+	display: flex;
+}
 .detail {
 	font-weight: bold;
 }
@@ -55,7 +58,6 @@ body {
 .forecast-day {
 		text-transform: capitalize;
 }
-
 
 .details {
 	text-transform: capitalize;
@@ -98,6 +100,7 @@ body {
 .averages {
 	font-size: 1rem;
 }
+
 
 .temperature {
 	font-size: 5rem;
