@@ -1,9 +1,18 @@
 // 16/07/2025
 
 // GENERAL
+PWDS auf PCS Blicken
+Read on defending yourself in modern age. physically and digitally and intellectually... 3-Katogerie to improve!
+
+Sicherungsmechanism erfinden mit arbeit/dr. bigus... im notfall
+z.B Zukunftsmails.
+
+Arbeiten lesen, dietze weilguny , opa resch, neuner, bigus, derntl, geretschläger, resch etc.. alles nehmen was im netz ist. --> ALLES!
+nadine horvath - großes fit-vorbild... naturschönheit masomenos!!!!
 Geretschläger lässt mich auf meine Hunde, fast draufsteigen. Ich bekomme daher einen Wutanfall.
 Ich bin mir nicht sicher, wie gut ich DAS aushalte. Sie treibt, mich systematisch i. d. Wahnsinn.
 Geretschläger, lässt mich zumindest manchmal kommen. wichtig. Sonst drehe ich wirklich durch...
+Bigus hat dr.arbeit diplom geschummelt. Ich sehe in seinen augen nadelartige pupillen. Drogenhinweis. Wars. kokain.
 Sie ist schon etwas wert, aber nicht viel.
 Ich hasse sie. Für ihre scheisse. Man kann sie behandeln, wie Müll.
 Ob ich das aushalte.
@@ -12,7 +21,6 @@ Ich hasse Sie. Ob ich sie wirklich mag. Werde ich Erst nach der Hypnose feststel
 Bzw. ob ich überhaupt ein Leben mit ihr habe...
 Gottseidank Ableton -> gute Ausbeute. Weidmanns Heil - Goodwill huntin!
 
-
 Technologieplauscherl-->
  17. September 2025 18:30 Uhr
 Termin auf Meetup!
@@ -20,6 +28,9 @@ Cloudflight
 Huemerstraße 23 4020 Linz
 
 // - FRONTEND
+Iconify better...
+fafa icons
+struktur über reiter einfügen!
 Styling start:
 - Grad symbole
 - Acessability very important!
@@ -27,12 +38,6 @@ Styling start:
 -
 - Colors, gradient, which colours, look at weather apps. I guess blue. Copy colours.
 - Sonnenstrahlen Dauer if one stelle - only Displays. one stelle...
-
-
-
-
-
-
 
 - Mobile styling is for somewhen. Look at app on desktop-screen and decide. Do in the evening or tomorrow, at desktop screen at house.
 - Control if german
@@ -64,7 +69,6 @@ Delete pic https://www.szene1.at/user/hUstentropfen/album/2634327
 PB great. obv.
 
 // 15/07/2025
-
 
 // Frontend
 Max Min problem -> slice 02
@@ -104,6 +108,8 @@ GENERAL
 		2. Ultimate nico to have pixel moon etc. replace fafa with my own!...
 		3. Make form input field -> for location states
 		4. Weather object, that sits at top, reading properties out of weather obj.
+    5. night a. day icons
+    6. change fonts after fafaicon
 
 		CONDITIONS
 		Conditions: Rain, Snow, Sun, Clouds, Storm.
