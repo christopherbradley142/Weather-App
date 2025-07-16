@@ -28,6 +28,15 @@ Cloudflight
 Huemerstraße 23 4020 Linz
 
 // - FRONTEND
+fonts to choose:
+abel
+lexend
+tektur
+sora
+bricolage grotesque
+
+
+
 Iconify better...
 fafa icons
 struktur über reiter einfügen!

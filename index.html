@@ -2,10 +2,9 @@
 <html lang="en">
   <head>
 	<meta charset="UTF-8">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@300;400&display=swap" rel="stylesheet">
-		<link href="https://cdn.jsdelivr.net/npm/material-icons@1.13.14/iconfont/material-icons.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="styles.css">
 		<script src="./react.js"></script>
 		<script src="./react-dom.js"></script>
@@ -44,7 +43,7 @@
       const [shwr, setShwr] = useState(null);
       const [dayOne, setDayOne] = useState(null);
       const [dayTwo, setDayTwo] = useState(null);
-
+      const [icon, setIcon] = useState(null);
       const [dayThree, setDayThree] = useState(null);
       const [forecastTempOneMin, setForecastTempOneMin] = useState(null);
       const [forecastTempOneMax, setForecastTempOneMax] = useState(null);
@@ -52,8 +51,6 @@
       const [forecastTempTwoMax, setForecastTempTwoMax] = useState(null);
       const [forecastTempThreeMin, setForecastTempThreeMin] = useState(null);
       const [forecastTempThreeMax, setForecastTempThreeMax] = useState(null);
-
-      const [icon, setIcon] = useState(null);
 
 			// URL
 			const APIurl = "https://api.open-meteo.com/v1/forecast?latitude=48.30&longitude=14.28&daily=weather_code,apparent_temperature_max,apparent_temperature_min,sunshine_duration,daylight_duration&current=apparent_temperature,snowfall,cloud_cover,precipitation,rain,showers,wind_speed_10m,wind_direction_10m&timezone=Europe%2FBerlin&forecast_days=4";
@@ -199,12 +196,7 @@ return (
 		<p className="temperature">{temp}°</p>
 		<div className="condis">
 				<h3 className="condi">{condition}</h3>
-        <span id="jambo">lorem</span>
-        <span class="bi--sun-fill"></span>
-        <span class="bi--snow2"></span>
-        <span class="bi--cloud-rain-heavy"></span>
-        <span class="bi--cloud-lightning-fill"></span>
-        <span class="bi--cloud"></span>
+        <span class={icon}></span>
 		</div>
 </div>
 		<div className="weather-details">
