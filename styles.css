@@ -95,7 +95,7 @@ body {
 .condis {
 	display: flex;
 	grid-column: 3 / span 2;
-	grid-row: 1/span 1;
+	grid-row: 2/span 1;
 	align-items: center;
 }
 
