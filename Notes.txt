@@ -1,3 +1,13 @@
+17/07/2025
+
+// FRONTEND
+"2.Zahl-fehlt" an der Uhr ändern
+'-' genauso bei Anzahl der Sonnenstunden
+Linie zwischen den Averages
+Andere Gradienten Farbe
+Ernstere Schrift
+
+
 // 16/07/2025
 
 // GENERAL
