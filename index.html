@@ -177,25 +177,23 @@
       )
       // RETURN
 return (
-
-
 <div className="wrapper">
-  <p className="time">{wkDay}, {currentTime}</p>
-  <h4 className="location-Header">standort:</h4>
-  <h2 className="city">linz</h2>
 
   <div className="tempWrapper">
-  <div className="condis">
-    <span class={icon}></span>
-    <h3 className="condi">{condition}</h3>
-  </div>
+    <p className="time">{wkDay}, {currentTime}</p>
+    <h4 className="location">standort:<br/>Linz</h4>
+    <div className="condis">
+      <span class={icon}></span>
+      <h3 className="condi">{condition}</h3>
+    </div>
     <p className="temperature">{temp}°</p>
     <div className="average">
       <p className="higherAvg">{max}°</p>
       <span className="lineSpan"></span>
       <p className="lowerAvg">{min}°</p>
     </div>
-</div>
+  </div>
+
 <div className="weather-details">
         <div>
           <p class="wind">Windgeschwindigkeit:</p>
