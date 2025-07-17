@@ -87,8 +87,8 @@ body {
 
 .location {
 	text-transform: capitalize;
-	grid-column: 0 / span 2;
-	grid-row: 3 / span 1;
+	grid-column: 2 / span 2;
+	grid-row: 5 / span 1;
 }
 
 .condis {
