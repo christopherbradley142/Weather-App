@@ -17,8 +17,8 @@ body {
 	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 	align-content: center;
 	justify-content: center;
-
 }
+
 .condis {
 	display: flex;
 }
@@ -106,6 +106,12 @@ body {
 	font-size: 5rem;
 }
 
+.tempCollector {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
 .condition {
 	font-size: 2rem;
 }
@@ -117,7 +123,6 @@ body {
 .weather-details {
 	margin-bottom: 1rem;
 }
-
 
 .bi--sun-fill {
   display: inline-block;
