@@ -29,18 +29,6 @@ body {
 	grid-row: 3 / span 1;
 }
 
-.location {
-	text-transform: capitalize;
-	font-size: 1.5rem;
-	grid-column: 1 / span 2;
-	grid-row: 0 / span 1;
-}
-
-.city {
-	text-transform: capitalize;
-	font-size: 2rem;
-}
-
 .detail {
 	font-size: 1.5rem;
 }
@@ -91,15 +79,6 @@ body {
 	gap: 25px;
 }
 
-.time {
-	text-transform: capitalize;
-	grid-row: 0 / span 1;
-	grid-column: 1 / span 2;
-}
-
-.city {
-	font-size: 2.5rem;
-}
 
 
 .tempWrapper {
@@ -108,19 +87,31 @@ body {
 	grid-row: repeat(6, 1fr);
 }
 
+
+.location {
+	text-transform: capitalize;
+	font-size: 1.5rem;
+	grid-column: 3 / span 2;
+	grid-row: 0 / span 2;
+}
+
 .condis {
 	display: flex;
-	grid-column: 1 / span 2;
-	grid-row: 0;
+	grid-column: 2 / span 2;
+	grid-row: 1;
 	align-items: center;
 }
 
-
+.time {
+	text-transform: capitalize;
+	grid-column: 0 / span 2;
+	grid-row: 1 / span 1;
+}
 
 .temperature {
 	font-size: 8rem;
-	grid-column: 1 / span 1;
-
+	grid-column: 2 / span 1;
+	grid-row: 2/ span 1;
 }
 
 .average {
