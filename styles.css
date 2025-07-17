@@ -1,7 +1,7 @@
 body {
 /*	background: linear-gradient(to bottom right, #60a5fa, #3b82f6); */
 	min-height: 100vh;
-	font-family: "Inter", "Helvetica","Arial";
+	font-family: "Inter", "Helvetica", "Arial";
 	font-weight: 400;
   font-style: normal;
 	padding: 1rem;
@@ -22,6 +22,7 @@ body {
 .condis {
 	display: flex;
 }
+
 .detail {
 	font-weight: bold;
 }
@@ -110,19 +111,24 @@ body {
 	align-items: center;
 }
 
-.condition {
+.averageTemp {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+
+p.temperature {
+	font-size: 6rem;
+}
+
+p.lowerAvg, p.higherAvg {
 	font-size: 2rem;
+	padding: 0;
+	margin: 0;
 }
 
 p.lowerAvg {
 	border-top: 1px solid black;
-	margin: 0;
-	padding: 0;
-}
-
-p.higherAvg {
-	margin: 0;
-	padding: 0;
 }
 
 .dayName {

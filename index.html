@@ -86,7 +86,7 @@
 			      return "So";
 			    }
 			  }
-        console.log(icon);
+
         // TIME
 			let weekDay = currday(dayInDig);
 			let conHours = hours.toString();
@@ -179,14 +179,12 @@
 return (
 <div className="wrapper">
 <p className="time">{wkDay}, {currentTime}</p>
-
 <h4 className="location-Header">standort:</h4>
 <h2 className="city">linz</h2>
 <div className="condis">
   <span class={icon}></span>
   <h3 className="condi">{condition}</h3>
 </div>
-
 <div className="tempCollector">
   <p className="temperature">{temp}°</p>
   <div className="averageTemp">
@@ -201,7 +199,6 @@ return (
           <p class="wind">Windgeschwindigkeit:</p>
           <p className="detail">{spd} km/h</p>
         </div>
-
 		<div className="lightSun">
         <p>Länge des Tages: {light}h</p>
 				<p>Anzahl der Sonnenstunden: {sun}h</p>
