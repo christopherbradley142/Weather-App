@@ -42,6 +42,7 @@ body {
 
 
 .forecast {
+	
 		border-top: 1px solid black;
 	  padding-top: 2rem;
 }
@@ -93,7 +94,7 @@ body {
 
 .condis {
 	display: flex;
-	grid-column: 1 / span 2;
+	grid-column: 0 / span 2;
 	grid-row: 2 / span 1;
 	align-items: center;
 }
