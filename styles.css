@@ -49,6 +49,12 @@ body {
 .condi {
 	text-transform: capitalize;
 	font-size: 2rem;
+	margin: 0;
+	padding: 0;
+}
+
+p.temperature {
+	font-size: 9rem;
 }
 
 .forecast {
@@ -101,6 +107,13 @@ body {
 	font-size: 1rem;
 }
 
+.tempCollector {
+	display: flex;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+}
+
 .averageTemp {
 	display: flex;
 	justify-content: flex-start;
@@ -108,7 +121,6 @@ body {
 }
 
 p.temperature {
-
 }
 
 p.lowerAvg, p.higherAvg {
