@@ -106,7 +106,7 @@ body {
 }
 
 .temperature {
-	font-size: 6rem;
+	font-size: 7rem;
 	grid-column: 2 / span 1;
 	grid-row: 2/ span 1;
 }
